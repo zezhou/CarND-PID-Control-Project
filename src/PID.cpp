@@ -36,14 +36,7 @@ double PID::TotalError() {
 }
 
 double PID::Control() {
-	Twiddle();
     double output = -Kp * p_error - Kd * d_error  - Ki * i_error;
     pre_cte = p_error;
     return output;
-}
-
-void PID::Twiddle() {
-	for (int i =0; i < 3; i++) {
-    	
-	}
 }
