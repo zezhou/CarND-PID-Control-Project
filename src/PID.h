@@ -1,3 +1,4 @@
+#include <iostream>
 #ifndef PID_H
 #define PID_H
 
@@ -16,6 +17,11 @@ public:
   double Kp;
   double Ki;
   double Kd;
+  
+  double pre_cte;
+
+
+    double tol;
 
   /*
   * Constructor
@@ -41,6 +47,13 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+   
+  /*
+  * Calculate control values
+  */
+  double Control();
+
+  void Twiddle();
 };
 
 #endif /* PID_H */
