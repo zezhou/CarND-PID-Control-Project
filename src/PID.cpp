@@ -2,10 +2,6 @@
 
 using namespace std;
 
-/*
-* TODO: Complete the PID class.
-*/
-
 PID::PID() {}
 
 PID::~PID() {}
@@ -18,11 +14,6 @@ void PID::Init(double Kp, double Ki, double Kd) {
     i_error = 0;
     d_error = 0;
     pre_cte = 0;
-
-	// params for twiddle
-	//tol = 0.2;
-	//best_error = 0;
-	//dp = [1,1,1]
 }
 
 void PID::UpdateError(double cte) {
