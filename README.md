@@ -11,21 +11,21 @@ The goal of steer controller is to output a steer correction based on the value 
 The output of steer controller is constrained between -1 and 1.
 The P, I, D parameters determines the change numerical value of steer. 
 
-	- P component makes the car to steer proportional to the car's distance from the lane center. Increasing the weight P enlarges the steer response with sharp turns (and opposite). 
+- P component makes the car to steer proportional to the car's distance from the lane center. Increasing the weight P enlarges the steer response with sharp turns (and opposite). 
 
-	- I component counteracts a bias between vehicle trajectory and target trajectory. It is proportional to the accumulate of CTE.  
+- I component counteracts a bias between vehicle trajectory and target trajectory. It is proportional to the accumulate of CTE.  
 
-	- D reacts to fast changing input signals. A properly tuned D parameter will make the car approach center line smoothly without swing.
+- D reacts to fast changing input signals. A properly tuned D parameter will make the car approach center line smoothly without swing.
 
 ### Throttle Controller
 
 The goal of throttle controller is to control vihecle speed. Like hunman driver, the vehicle will have more time to correct its motion if it run slowly. I set speed constrains between 0.05 and 0.3. The P, I, D parameters and CTE determine the speed of vehicle by PID parameters:
 
-	- P components makes the car speed to steer proportional to the car's distance from the lane center. If CET is large, the throtte controller will output a large negative value to decrease the vehicle speed.
+- P components makes the car speed to steer proportional to the car's distance from the lane center. If CET is large, the throtte controller will output a large negative value to decrease the vehicle speed.
 
-	- I do not use I components in throttle controller and set it to zero.
+- I do not use I components in throttle controller and set it to zero.
 
-	- D reacts to fast changing input signals. If CET change is huge, the throtte controller will output a large negative value to decrease the vehicle speed.
+- D reacts to fast changing input signals. If CET change is huge, the throtte controller will output a large negative value to decrease the vehicle speed.
 
 ## Describe how the final hyperparameters were chosen.
 
